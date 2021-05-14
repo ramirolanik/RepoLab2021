@@ -1,0 +1,35 @@
+﻿@model List<ProyectoMVC.MVC.Models.CustomerView>
+@{
+    ViewBag.Title = "Customers Page";
+}
+<h1>Lista Customers</h1>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Contact Name</th>
+            <th scope="col">Company Name</th>
+            <th scole "col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @foreach (var customers in Model)
+        {
+            <tr>
+                <th scope ="row">@customers.id</th>
+                <th>@customers.ContactName</th>
+                <th>@customers.CompanyName</th>
+                <td>@Html.ActionLink("Borrar","Delete", new {id = customers.id }) </td>
+            </tr>
+
+        }
+        </tbody>
+</table>
+
+<div>
+    @Html.ActionLink("Inserte Nuevo Customer","Insert")
+
+</div>
